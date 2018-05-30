@@ -1,0 +1,58 @@
+{% extends 'master/base.html' %}
+{% block content %}
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<center><h2 class="page-header">Polisher Details</h2></center>
+			</div>
+		</div><!--/.row-->
+				
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					
+					<div class="panel-body">
+							<table class="table table-responsive table-bordered">
+									<thead>
+									<tr>
+										<th>Sr. No.</th>
+										<th>Polisher Name</th>
+										<th>Jewellery</th>
+										<th>Weight Sent</th>
+										<th>Weight Received</th>
+										<th>Polishing Cost</th>
+										<th>Other Cost</th>
+										<th>Sent Date</th>
+										<th>Receive Date</th>
+									</tr>
+									</thead>
+									<tbody>
+										{% for items in polisher %}
+										<tr>
+											<td>{{ forloop.counter }}</td>
+											<td>{{ items.polisher_id }}</td>
+											<td>{{ items.jewellery_id }}</td>
+											<td>{{ items.weight_sent }}</td>
+											<td>{{ items.receive_weight }}</td>
+											<td>{{ items.polisher_cost }}</td>
+											<td>{{ items.other_cost }}</td>
+											<td>{{ items.sent_date }}</td>
+											<td>{{ items.receive_date }}</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	
+		
+	</div><!--/.main-->
+{% endblock %}
